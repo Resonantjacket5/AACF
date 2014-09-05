@@ -1,0 +1,11 @@
+$("#leader_tabs").html("<%= j (render 'leaders_list', locals: { leaders: @leaders}) %>");
+
+$('#myTab_roles a').click(function (e) {
+  $('ul.nav-tabs li.active').removeClass('active');
+  $(this).parent('li').addClass('active');
+})
+
+$('#leader_list a').click(function (e) {
+  $('ul.list-group li.active').removeClass('active')
+  $(this).parent('li').addClass('active')
+})

@@ -1,0 +1,10 @@
+
+<div class="list-group" id="leader_list">
+  <ul class="list-group">
+  <% @leaders.each do |leader| %>
+    <li class="list-group-item">
+      <%= link_to leader.name, leader_profile_path(:leader_id => leader.id), remote: true %>
+    </li>
+  <% end %>
+  </ul>
+</div>

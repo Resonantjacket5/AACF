@@ -1,0 +1,81 @@
+<%= form_for(@leader) do |f| %>
+  <% if @leader.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@leader.errors.count, "error") %> prohibited this leader from being saved:</h2>
+
+      <ul>
+      <% @leader.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :position %><br>
+    <%= f.text_field :position %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  
+  
+  
+  
+  <div class="form-group">
+    <%= f.label :year %><br>
+    <%= f.select :year, Leader::YEARS,{} , :class => "form-control" %>
+  </div>
+  
+  
+  
+  
+  <div class="field">
+    <%= f.label :major %><br>
+    <%= f.text_area :major %>
+  </div>
+  <div class="field">
+    <%= f.label :hometown %><br>
+    <%= f.text_field :hometown %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :strange_fact %><br>
+    <%= f.text_area :strange_fact %>
+  </div>
+  <div class="field">
+    <%= f.label :interests %><br>
+    <%= f.text_area :interests %>
+  </div>
+  
+  
+  <div class="form-group">
+    <%= f.label :leadership_position %><br>
+    <%= f.select :leadership_position, Leader::LEADERSHIP_POSITION, {}, :class => "form-control" %>
+  </div>
+  
+  
+  <div class="field">
+    <%= f.label :graduated %><br>
+    <%= f.check_box :graduated %>
+  </div>
+  <div class="field">
+    <%= f.label :contact_ok %><br>
+    <%= f.check_box :contact_ok %>
+  </div>
+  <div class="field">
+    <%= f.label :past_positions %><br>
+    <%= f.text_area :past_positions %>
+  </div>
+  <div class="field">
+    <%= f.label :post_grad_email %><br>
+    <%= f.text_field :post_grad_email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

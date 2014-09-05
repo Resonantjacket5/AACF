@@ -1,0 +1,29 @@
+<h1>Listing static_texts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Active</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @static_texts.each do |static_text| %>
+      <tr>
+        <td><%= static_text.title %></td>
+        <td><%= static_text.body %></td>
+        <td><%= static_text.active %></td>
+        <td><%= link_to 'Show', static_text %></td>
+        <td><%= link_to 'Edit', edit_static_text_path(static_text) %></td>
+        <td><%= link_to 'Destroy', static_text, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Static text', new_static_text_path %>

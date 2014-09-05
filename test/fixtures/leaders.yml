@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  position: MyText
+  name: MyText
+  year: MyText
+  major: MyText
+  hometown: MyText
+  email: MyText
+  strange_fact: MyText
+  interests: MyText
+  leadership_position: MyText
+  graduated: false
+  contact_ok: false
+  past_positions: MyText
+  post_grad_email: MyText
+
+two:
+  position: MyText
+  name: MyText
+  year: MyText
+  major: MyText
+  hometown: MyText
+  email: MyText
+  strange_fact: MyText
+  interests: MyText
+  leadership_position: MyText
+  graduated: false
+  contact_ok: false
+  past_positions: MyText
+  post_grad_email: MyText

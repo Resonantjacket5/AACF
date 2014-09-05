@@ -1,0 +1,6 @@
+$("#about_body").html("<%= j (render params[:my_param], locals: { static_text_theme: @static_text_theme, static_text_vision: @static_text_vision}) %>");
+
+$('#myTab a').click(function (e) {
+  $('ul.nav-tabs li.active').removeClass('active');
+  $(this).parent('li').addClass('active');
+})
