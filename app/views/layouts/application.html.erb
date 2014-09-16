@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Aacf5</title>
+  <title>AACF</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href="http://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<div class="navbar navbar-default navbar-fixed-top">
+<div class="navbar navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -23,7 +25,7 @@
         <li><%=link_to 'Home', page_path('home')%></li>
         <li><%=link_to 'About', page_path('about')%></li>
         <li><%=link_to 'Leaders', leaders_path%></li>
-        <li><%=link_to 'Contact', page_path('contact')%></li>
+        <li><%=link_to 'Contact', new_contact_path%></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
           <ul class="dropdown-menu">

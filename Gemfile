@@ -20,6 +20,12 @@ gem 'bootstrap-sass'
 
 gem 'autoprefixer-rails'
 
+gem 'mail_form'
+
+gem 'simple_form'
+
+gem 'actionview-encoded_mail_to'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

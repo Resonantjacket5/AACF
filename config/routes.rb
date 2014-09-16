@@ -2,15 +2,21 @@ Rails.application.routes.draw do
   
   
 
+
+
   get '/leaders/tabs', to: 'leaders#tabs', as: 'tabs'
   
   get '/static_texts/body', to: 'static_texts#body', as: 'body'
+  
+  get '/contact', to: 'contacts#new', as: 'contact'
   
   resources :leaders do
     get "profile"
   end
   
   resources :static_texts
+  
+  resources "contacts", only: [:new, :create]
   
   
   

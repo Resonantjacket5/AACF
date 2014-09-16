@@ -21,16 +21,16 @@
   <dd><%= @leader.hometown %></dd>
   
   <dt>Email</dt>
-  <dd><%= @leader.email %></dd>
+  <dd><%= mail_to(@leader.email, "Email #{@leader.name}", encode: "javascript") %></dd>
   
   <dt>Strange Fact</dt>
   <dd><%= @leader.strange_fact %></dd>
   
   <dt>Interests</dt>
-  <dd><%= @leader.leadership_position %></dd>
+  <dd><%= @leader.interests %></dd>
   
   <dt>DT</dt>
-  <dd>DD</dd>
+  <dd>DD </dd>
 </dl>
 
   </div>
