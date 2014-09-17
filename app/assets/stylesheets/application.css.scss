@@ -15,16 +15,37 @@
  */
 
   
-  $list-group-active-bg: #ffff00;
-  
-  $body-bg: #e7bd42;
-  
+
   $font-family-base: "Open Sans";
   
   $headings-font-family: "Bree Serif";
   
+  $navbar-height: 65px;
+  
+  $transparent: rgba(0,0,0,0);
+  
+  $translucent: rgba(255,255,255,0.2);
+  
+  $translucent-black: rgba(0,0,0,0.15);
+  
+  $white: rgba(255,255,255,1);
+  
+  $body-bg: $transparent;
+  
+  $panel-bg: $translucent-black;
 
-
+  $navbar-default-link-color: white;
+  
+  $text-color: darken(white,2%);
+  
+  $nav-tabs-border-color: $transparent;
+  
+  $navbar-default-bg: $translucent-black;
+  
+  $list-group-bg: $translucent-black;
+  
+  $list-group-link-color: darken(white,2%);
+  
 
 
 
