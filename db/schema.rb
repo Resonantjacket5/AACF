@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140831035912) do
+ActiveRecord::Schema.define(version: 20140917181510) do
 
   create_table "leaders", force: true do |t|
     t.text     "position"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140831035912) do
     t.text     "post_grad_email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "img_url"
   end
 
   create_table "static_texts", force: true do |t|

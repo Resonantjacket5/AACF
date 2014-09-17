@@ -31,6 +31,10 @@ class LeadersController < ApplicationController
       format.js
     end
   end
+  
+  def indexedit
+    @leaders = Leader.all
+  end
 
 
   # GET /leaders/new
@@ -93,6 +97,6 @@ class LeadersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def leader_params
-      params.require(:leader).permit(:position, :name, :year, :major, :hometown, :email, :strange_fact, :interests, :leadership_position, :graduated, :contact_ok, :past_positions, :post_grad_email)
+      params.require(:leader).permit(:position, :name, :year, :major, :hometown, :email, :strange_fact, :interests, :leadership_position, :graduated, :contact_ok, :past_positions, :post_grad_email, :img_url)
     end
 end

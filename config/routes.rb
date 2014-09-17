@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   
   get '/contact', to: 'contacts#new', as: 'contact'
   
+  get '/leaders/indexedit', to: 'leaders#indexedit', as: 'indexedit'
+  
   resources :leaders do
     get "profile"
   end
