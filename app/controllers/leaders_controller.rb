@@ -1,6 +1,7 @@
 class LeadersController < ApplicationController
   before_action :set_leader, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:indexedit, :new, :edit, :create, :update, :destroy]
+  before_action :check_admin, only: [:indexedit, :new, :edit, :create, :update, :destroy]
 
 
 
@@ -99,5 +100,11 @@ class LeadersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def leader_params
       params.require(:leader).permit(:position, :name, :year, :major, :hometown, :email, :strange_fact, :interests, :leadership_position, :graduated, :contact_ok, :past_positions, :post_grad_email, :img_url)
+    end
+    
+    def check_admin
+      unless current_user.admin?
+        render 'admin_approval'
+      end
     end
 end

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
 
 
-  devise_for :users
+  devise_for :users, :path_prefix => 'd'
+  resources :users
+  
   get '/leaders/tabs', to: 'leaders#tabs', as: 'tabs'
   
   get '/static_texts/body', to: 'static_texts#body', as: 'body'

@@ -1,7 +1,8 @@
 class StaticTextsController < ApplicationController
   before_action :set_static_text, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
-
+  before_action :check_admin, only: [:new, :edit, :create, :update, :destroy]
+  
   # GET /static_texts
   # GET /static_texts.json
   def index
@@ -93,5 +94,11 @@ class StaticTextsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def static_text_params
       params.require(:static_text).permit(:title, :body, :active)
+    end
+    
+    def check_admin
+      unless current_user.admin?
+        render 'leaders/admin_approval'
+      end
     end
 end
