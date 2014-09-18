@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   
   
 
-
-
   devise_for :users, :path_prefix => 'd'
   resources :users
+  
+  get 'dashboards/index'
   
   get '/leaders/tabs', to: 'leaders#tabs', as: 'tabs'
   

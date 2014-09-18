@@ -29,8 +29,8 @@
     <% if user_signed_in? %>
       
         <ul class="nav navbar-nav">
-          <li class = "navbar-brand"> <%= current_user.email %>
-          <li><%=link_to 'Dashboard', page_path('about')%></li>
+          <li class = "navbar-brand"> <%= current_user.email %> </li>
+          <li><%=link_to 'Dashboard', dashboards_index_path%></li>
           <li> <%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
         </ul>
       

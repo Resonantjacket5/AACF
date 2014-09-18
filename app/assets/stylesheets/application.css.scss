@@ -46,6 +46,10 @@
   
   $list-group-link-color: darken(white,2%);
   
+  $well-bg: darken($translucent-black,1%);
+  
+  a.btn:visited { color: darken(white,2%); }
+  
 
 
 
@@ -53,3 +57,4 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
