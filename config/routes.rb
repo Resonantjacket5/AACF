@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
 
 
+  devise_for :users
   get '/leaders/tabs', to: 'leaders#tabs', as: 'tabs'
   
   get '/static_texts/body', to: 'static_texts#body', as: 'body'

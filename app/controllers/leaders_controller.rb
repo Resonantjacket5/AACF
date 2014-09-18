@@ -1,5 +1,6 @@
 class LeadersController < ApplicationController
   before_action :set_leader, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:indexedit, :new, :edit, :create, :update, :destroy]
 
 
 

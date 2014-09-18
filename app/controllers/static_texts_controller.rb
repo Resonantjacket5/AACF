@@ -1,6 +1,6 @@
 class StaticTextsController < ApplicationController
   before_action :set_static_text, only: [:show, :edit, :update, :destroy]
-  
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /static_texts
   # GET /static_texts.json
