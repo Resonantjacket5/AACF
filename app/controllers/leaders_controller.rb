@@ -9,6 +9,7 @@ class LeadersController < ApplicationController
   # GET /leaders.json
   def index
     @leaders = Leader.all
+    @leaders_page_link = StaticText.where(title: "leaders_page_link").pluck(:body).flatten.join(" ")
   end
 
   # GET /leaders/1
