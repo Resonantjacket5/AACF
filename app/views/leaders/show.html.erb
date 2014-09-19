@@ -2,7 +2,8 @@
 
 <div class="row">
   <div class="col-md-5 col-md-offset-2">
-
+<div class="panel panel-default">
+  <div class="panel-body">
 
 <p id="notice"><%= notice %></p>
 
@@ -79,17 +80,22 @@
 <%= link_to 'Edit', edit_leader_path(@leader) %> |
 <%= link_to 'Back', indexedit_path %>
 
-
+</div>
+</div>
   </div>
   
   <div class="row">
     <div class="col-md-5">
-       <p>Image Preview </p>
+    <div class="panel panel-default">
+  <div class="panel-body">
+       <h1>Image Preview </h1>
     </div>
     
     <div>
       <%= image_tag(@leader.img_url, class: "img-rounded profile-image") %>
     </div>
+  </div>
+  </div>
   </div>
 
 </div>

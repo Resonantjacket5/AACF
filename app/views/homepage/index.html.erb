@@ -104,9 +104,9 @@
         <div>
           <%= image_tag(ue.img_url, class: "img-rounded event-image") %>
         </div>
-        <p> Description: <%= ue.description %> </p>
-        <p> Location: <%= ue.location %> </p>
-        <p> Date/Time:  </p>
+        <p> <b>Description: </b><%= ue.description %> </p>
+        <p> <b>Location: </b><%= ue.location %> </p>
+        <p> <b> Date/Time:  </b><%= ue.event_time.strftime("%a %B %d at %I:%M %p") %></p>
       
       </li>
     <% end %>
