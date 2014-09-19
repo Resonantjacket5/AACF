@@ -177,10 +177,10 @@ CarouselItem.delete_all
 
 CarouselItem.create([
 	{img_url: "http://i61.tinypic.com/21j8851.jpg",
-	description: "Join us for an inductive Bible study!"}
+	description: "Join us for an inductive Bible study!"},
 	
 	{img_url: "http://i58.tinypic.com/xfoort.jpg",
-	description: "Spend some time away from campus! Conferences are a welcome break from school and wonderful time with God."}
+	description: "Spend some time away from campus! Conferences are a welcome break from school and wonderful time with God."},
 	
 	{img_url: "http://i59.tinypic.com/33xuiio.jpg",
 	description: "Don't let life just drift by! Visit our Large Groups to meet up with friends!"}
