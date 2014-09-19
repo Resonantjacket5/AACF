@@ -1,19 +1,25 @@
 <div class="container">
 
 <div class="row">
-  <div class="col-md-5 col-md-offset-2">
-  
-  
 
-
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-body">
-    <h1>Small Groups</h1>
-    <br />
-    <p> <%= @small_group_text %> </p>
+  <div class="col-md-4 col-md-offset-2">
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-body">
+        <h1>Small Groups</h1>
+        <br />
+        <p> <%= @small_group_text %> </p>
+      </div>
+    </div>
   </div>
-</div>
+
+
+  <div class="col-md-5">
+  
+  
+
+
+
 
 
   
@@ -25,14 +31,14 @@
             
             <%= image_tag(sg.img_url, class: "img-rounded small-group-image") %> <br />
             
-            <p> Topic: <%= sg.topic %> </p>
-            <p> Location: <%= sg.location %> </p>
-            <p> Weekly on: <%= sg.weekday %> </p>
-            <p> Time: <%= sg.event_time.strftime("%I:%M %p") %> </p>
-            <p> Contact: <%= sg.contact %> </p>
+            <p> <b> Topic: </b><%= sg.topic %> </p>
+            <p> <b>Location: </b><%= sg.location %> </p>
+            <p> <b>Weekly on: </b><%= sg.weekday %> </p>
+            <p> <b>Time: </b><%= sg.event_time.strftime("%I:%M %p") %> </p>
+            <p> <b>Contact: </b><%= sg.contact %> </p>
             
               <% if sg.leaders_note_1_active %>
-                <p> Leaders' Notes: <%= sg.leaders_note_1 %> </p>
+                <p> <b>Leaders' Notes:</b> <%= sg.leaders_note_1 %> </p>
               <% end %>
           
               <% if sg.leaders_note_2_active %>
