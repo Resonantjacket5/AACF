@@ -1,15 +1,15 @@
 class Leader < ActiveRecord::Base
 
   
-  validates :position, :name, :year, :major, :hometown, :email, :strange_fact, :interests, :leadership_position, presence: true
+  validates :position, :name, :year, presence: true
   
   
   
   
   
-  YEARS=%w(Freshman Sophomore Junior Senior Super\ Senior Staff)
+  YEARS=%w(Freshman Sophomore Junior Senior Super\ Senior Staff Graduated)
 
-  LEADERSHIP_POSITION = ["Servant Team", "Small Group Leader", "Activity"]
+  LEADERSHIP_POSITION = ["Servant Team", "Small Group Leader", "Activity", "Inactive"]
 
 
 
