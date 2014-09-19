@@ -170,6 +170,7 @@ UpcomingEvent.delete_all
 UpcomingEvent.create([
 	{title: "Fall Conference",
 	description: "join us for fall conference",
+	event_time: DateTime.new(2009,9,1,17),
 	location: "KY"}
 ])
 
