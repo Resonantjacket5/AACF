@@ -1,0 +1,47 @@
+<div class="container">
+
+<div class="row">
+  <div class="col-md-12 col-md-offset-0">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
+  
+  
+  
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @upcoming_event.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @upcoming_event.description %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @upcoming_event.location %>
+</p>
+
+<p>
+  <strong>Event time:</strong>
+  <%= @upcoming_event.event_time %>
+</p>
+
+<p>
+  <strong>Img url:</strong>
+  <%= @upcoming_event.img_url %>
+</p>
+
+<%= link_to 'Edit', edit_upcoming_event_path(@upcoming_event) %> |
+<%= link_to 'Back', upcoming_events_path %>
+
+
+
+  </div>
+  </div>
+  </div>
+</div>
+</div>

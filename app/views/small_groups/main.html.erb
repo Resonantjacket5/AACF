@@ -1,0 +1,58 @@
+<div class="container">
+
+<div class="row">
+  <div class="col-md-5 col-md-offset-2">
+  
+  
+
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-body">
+    <h1>Small Groups</h1>
+    <br />
+    <p> <%= @small_group_text %> </p>
+  </div>
+</div>
+
+
+  
+    <% @small_groups.each do |sg| %>
+      <% unless sg.disabled %>
+        <div class="panel panel-default">
+          <div class="list-group-item">
+            <h1 class = "text-center"><%= sg.leaders %> </h1> <br />
+            
+            <%= image_tag(sg.img_url, class: "img-rounded small-group-image") %> <br />
+            
+            <p> Topic: <%= sg.topic %> </p>
+            <p> Location: <%= sg.location %> </p>
+            <p> Weekly on: <%= sg.weekday %> </p>
+            <p> Time: <%= sg.event_time.strftime("%I:%M %p") %> </p>
+            <p> Contact: <%= sg.contact %> </p>
+            
+              <% if sg.leaders_note_1_active %>
+                <p> Leaders' Notes: <%= sg.leaders_note_1 %> </p>
+              <% end %>
+          
+              <% if sg.leaders_note_2_active %>
+                <p> <%= sg.leaders_note_2 %> </p>
+              <% end %>
+          
+              <% if sg.leaders_note_3_active %>
+                <p> <%= sg.leaders_note_3 %> </p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      
+
+  
+  
+  
+  
+  
+  </div>
+</div>
+</div>

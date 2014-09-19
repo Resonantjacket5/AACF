@@ -1,0 +1,49 @@
+<div class="container">
+
+<div class="row">
+  <div class="col-md-12 col-md-offset-0">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Weekday:</strong>
+  <%= @large_group.weekday %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @large_group.location %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @large_group.description %>
+</p>
+
+<p>
+  <strong>Event time:</strong>
+  <%= @large_group.event_time %>
+</p>
+
+<p>
+  <strong>Img url:</strong>
+  <%= @large_group.img_url %>
+</p>
+
+<%= link_to 'Edit', edit_large_group_path(@large_group) %> |
+<%= link_to 'Back', large_groups_path %>
+
+
+
+
+  </div>
+  </div>
+  </div>
+</div>
+</div>

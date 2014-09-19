@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  leaders: MyText
+  img_url: MyText
+  location: MyText
+  weekday: MyText
+  event_time: 2014-09-18 14:32:08
+  topic: MyText
+  contact: MyText
+  leaders_note_1: MyText
+  leaders_note_1_active: false
+  leaders_note_2: MyText
+  leaders_note_2_active: false
+  leaders_note_3: MyText
+  leaders_note_3_active: false
+  disabled: false
+
+two:
+  leaders: MyText
+  img_url: MyText
+  location: MyText
+  weekday: MyText
+  event_time: 2014-09-18 14:32:08
+  topic: MyText
+  contact: MyText
+  leaders_note_1: MyText
+  leaders_note_1_active: false
+  leaders_note_2: MyText
+  leaders_note_2_active: false
+  leaders_note_3: MyText
+  leaders_note_3_active: false
+  disabled: false

@@ -1,0 +1,45 @@
+<div class="container">
+
+<div class="row">
+  <div class="col-md-5 col-md-offset-2">
+  
+  
+    <div class="panel panel-default">
+       <!-- Default panel contents -->
+      <div class="panel-body">
+        <h1> Prayer Meetings </h1>
+        <br />
+        <p>Join us at the following times as we come together in prayer.</p>
+        <p> We pray for different topics every week ranging from our lives and coursework to Nashville and beyond! </p>
+        <p> Feel free to contact our Prayer Coordinator for more information. </p>
+        <br />
+        <% @prayer_images.each do |pi| %>
+          <%= image_tag(pi.img_url, class: "img-rounded prayer-image") %><br />
+        <% end %>
+        
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-3">
+    
+  <!-- List group -->
+    <div class="panel panel-default">
+      <ul class="list-group">
+        <% @prayer_times.each do |pt| %>
+          <li class="list-group-item">
+            <h3><%= pt.location %> </h3>
+            <p> Every <%= pt.weekday %> </p>
+            <p> Time: <%= pt.event_time.strftime("%I:%M %p") %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  
+  
+  
+  
+</div>
+</div>

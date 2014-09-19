@@ -1,0 +1,51 @@
+<div class="container">
+
+<div class="row">
+  <div class="col-md-12 col-md-offset-0">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
+
+
+
+
+<h1>Listing upcoming_events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Location</th>
+      <th>Event time</th>
+      <th>Img url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @upcoming_events.each do |upcoming_event| %>
+      <tr>
+        <td><%= upcoming_event.title %></td>
+        <td><%= upcoming_event.description %></td>
+        <td><%= upcoming_event.location %></td>
+        <td><%= upcoming_event.event_time %></td>
+        <td><%= upcoming_event.img_url %></td>
+        <td><%= link_to 'Show', upcoming_event %></td>
+        <td><%= link_to 'Edit', edit_upcoming_event_path(upcoming_event) %></td>
+        <td><%= link_to 'Destroy', upcoming_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Upcoming event', new_upcoming_event_path %>
+
+
+  </div>
+  </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyText
+  event_time: 2014-09-18 20:54:37
+  weekday: MyText
+  img_url: MyText
+  image_active: false
+
+two:
+  location: MyText
+  event_time: 2014-09-18 20:54:37
+  weekday: MyText
+  img_url: MyText
+  image_active: false

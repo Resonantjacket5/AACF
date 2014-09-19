@@ -1,0 +1,73 @@
+<%= form_for(@small_group) do |f| %>
+  <% if @small_group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@small_group.errors.count, "error") %> prohibited this small_group from being saved:</h2>
+
+      <ul>
+      <% @small_group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :leaders %><br>
+    <%= f.text_area :leaders %>
+  </div>
+  <div class="field">
+    <%= f.label :img_url %><br>
+    <%= f.text_area :img_url %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_area :location %>
+  </div>
+  <div class="field">
+    <%= f.label :weekday %><br>
+    <%= f.text_area :weekday %>
+  </div>
+  <div class="field">
+    <%= f.label :event_time %><br>
+    <%= f.time_select :event_time %>
+  </div>
+  <div class="field">
+    <%= f.label :topic %><br>
+    <%= f.text_area :topic %>
+  </div>
+  <div class="field">
+    <%= f.label :contact %><br>
+    <%= f.text_area :contact %>
+  </div>
+  <div class="field">
+    <%= f.label :leaders_note_1 %><br>
+    <%= f.text_area :leaders_note_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :leaders_note_1_active %><br>
+    <%= f.check_box :leaders_note_1_active %>
+  </div>
+  <div class="field">
+    <%= f.label :leaders_note_2 %><br>
+    <%= f.text_area :leaders_note_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :leaders_note_2_active %><br>
+    <%= f.check_box :leaders_note_2_active %>
+  </div>
+  <div class="field">
+    <%= f.label :leaders_note_3 %><br>
+    <%= f.text_area :leaders_note_3 %>
+  </div>
+  <div class="field">
+    <%= f.label :leaders_note_3_active %><br>
+    <%= f.check_box :leaders_note_3_active %>
+  </div>
+  <div class="field">
+    <%= f.label :disabled %><br>
+    <%= f.check_box :disabled %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

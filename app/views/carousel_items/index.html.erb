@@ -1,0 +1,49 @@
+<div class="container">
+
+<div class="row">
+  <div class="col-md-12 col-md-offset-0">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
+
+
+
+
+<h1>Listing carousel_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Img url</th>
+      <th>Description</th>
+      <th>Disable</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carousel_items.each do |carousel_item| %>
+      <tr>
+        <td><%= carousel_item.img_url %></td>
+        <td><%= carousel_item.description %> </td>
+        <td><%= carousel_item.disable %></td>
+        <td><%= link_to 'Show', carousel_item %></td>
+        <td><%= link_to 'Edit', edit_carousel_item_path(carousel_item) %></td>
+        <td><%= link_to 'Destroy', carousel_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Carousel item', new_carousel_item_path %>
+
+
+
+
+  </div>
+  </div>
+  </div>
+</div>
+</div>

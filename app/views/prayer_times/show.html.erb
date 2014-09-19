@@ -1,0 +1,47 @@
+<div class="container">
+
+<div class="row">
+  <div class="col-md-12 col-md-offset-0">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
+
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @prayer_time.location %>
+</p>
+
+<p>
+  <strong>Event time:</strong>
+  <%= @prayer_time.event_time %>
+</p>
+
+<p>
+  <strong>Weekday:</strong>
+  <%= @prayer_time.weekday %>
+</p>
+
+<p>
+  <strong>Img url:</strong>
+  <%= @prayer_time.img_url %>
+</p>
+
+<p>
+  <strong>Image active:</strong>
+  <%= @prayer_time.image_active %>
+</p>
+
+<%= link_to 'Edit', edit_prayer_time_path(@prayer_time) %> |
+<%= link_to 'Back', prayer_times_path %>
+
+
+
+  </div>
+  </div>
+  </div>
+</div>
+</div>

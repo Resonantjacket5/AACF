@@ -1,7 +1,7 @@
 <div class="container">
 
 <div class = "row">
-  <div class = "col-md-6 col-md-offset-3">
+  <div class = "col-md-3 col-md-offset-4">
     <div class = "text-center">
       <h1> Dashboard </h1>
       <br />
@@ -15,7 +15,7 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <div class = "text-center">
-          <span class="fa fa-pencil-square-o fa-5x"></span>
+          <span class="fa fa-male fa-5x"></span>
           <br />
           <br />
           <div class = "well well-sm">
@@ -33,13 +33,13 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <div class = "text-center">
-          <span class="fa fa-leaf fa-5x"></span>
+          <span class="fa fa-info fa-5x"></span>
           <br />
           <br />
           <div class = "well well-sm">
             <p> Use this link to edit the theme for this year located in the About page. </p>
           </div>
-          <%= link_to('Edit Leaders Profiles', static_texts_path, :class => 'btn btn-primary')  %>
+          <%= link_to('Edit About Page', static_texts_path, :class => 'btn btn-primary')  %>
         </div>
       </div>
     </div>
@@ -51,7 +51,7 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <div class = "text-center">
-          <span class="fa fa-male fa-5x"></span>
+          <span class="fa fa-users fa-5x"></span>
           <br />
           <br />
           <div class = "well well-sm">
@@ -66,8 +66,77 @@
 </div>
 
 
+
+
+
+
+
+
+<div class="row">
+  <div class="col-md-3 col-md-offset-1">
+  
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class = "text-center">
+          <span class="fa fa-book fa-5x"></span>
+          <br />
+          <br />
+          <div class = "well well-sm">
+            <p> Use this link to edit the information about Small Groups. </p>
+          </div>
+          <%= link_to('Edit Small Groups', small_groups_path, :class => 'btn btn-primary')  %>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+  <div class="col-md-3">
+  
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class = "text-center">
+          <span class="fa fa-glass fa-5x"></span>
+          <br />
+          <br />
+          <div class = "well well-sm">
+            <p> Use this link to edit the information about Large Group. </p>
+          </div>
+          <%= link_to('Edit Large Group', large_groups_path, :class => 'btn btn-primary')  %>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+  <div class="col-md-3">
+  
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class = "text-center">
+          <span class="fa fa-photo fa-5x"></span>
+          <br />
+          <br />
+          <div class = "well well-sm">
+            <p> Use this link to change banners in the homepage carousel. </p>
+          </div>
+          <%= link_to('Edit Carousel Items', carousel_items_path, :class => 'btn btn-primary')  %>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+
 <div class ="row">
-  <div class="col-md-3 col-md-offset-2">
+  <div class="col-md-3 col-md-offset-1">
   
     <div class="panel panel-default">
       <div class="panel-body">
@@ -78,7 +147,25 @@
           <div class = "well well-sm">
             <p> Use this link to update upcoming events on homepage. </p>
           </div>
-          <%= link_to('Edit User Account Settings', users_path, :class => 'btn btn-primary')  %>
+          <%= link_to('Edit Upcoming Events', upcoming_events_path, :class => 'btn btn-primary')  %>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+  <div class="col-md-3">
+  
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class = "text-center">
+          <span class="fa fa-coffee fa-5x"></span>
+          <br />
+          <br />
+          <div class = "well well-sm">
+            <p> Use this link to update prayer times for this current school year.</p>
+          </div>
+          <%= link_to('Edit Prayer Times', prayer_times_path, :class => 'btn btn-primary')  %>
         </div>
       </div>
     </div>

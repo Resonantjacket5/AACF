@@ -1,7 +1,28 @@
 Rails.application.routes.draw do
   
+ 
   
 
+  
+
+  get 'homepage/index'
+
+  resources :carousel_items
+
+  resources :upcoming_events
+
+  get '/large_groups/main', to: 'large_groups#main', as: 'large_group_main'
+  
+  get '/small_groups/main', to: 'small_groups#main', as: 'small_group_main'
+  
+  get '/prayer_times/prayer', to: 'prayer_times#prayer', as: 'prayer'
+
+  resources :large_groups
+
+  resources :small_groups
+  
+  resources :prayer_times
+  
   devise_for :users, :path_prefix => 'd'
   resources :users
   
@@ -23,6 +44,8 @@ Rails.application.routes.draw do
   
   resources "contacts", only: [:new, :create]
   
+  root to: "homepage#index"
+
   
   
   

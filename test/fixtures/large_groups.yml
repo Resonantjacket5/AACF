@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weekday: MyText
+  location: MyText
+  description: MyText
+  event_time: 2014-09-18 14:37:11
+  img_url: MyText
+
+two:
+  weekday: MyText
+  location: MyText
+  description: MyText
+  event_time: 2014-09-18 14:37:11
+  img_url: MyText

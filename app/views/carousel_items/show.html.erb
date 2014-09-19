@@ -1,0 +1,39 @@
+<div class="container">
+
+<div class="row">
+  <div class="col-md-12 col-md-offset-0">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Img url:</strong>
+  <%= @carousel_item.img_url %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @carousel_item.description %>
+</p>
+
+<p>
+  <strong>Disable:</strong>
+  <%= @carousel_item.disable %>
+</p>
+
+<%= link_to 'Edit', edit_carousel_item_path(@carousel_item) %> |
+<%= link_to 'Back', carousel_items_path %>
+
+
+
+
+  </div>
+  </div>
+  </div>
+</div>
+</div>

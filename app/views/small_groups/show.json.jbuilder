@@ -1,0 +1,1 @@
+json.extract! @small_group, :id, :leaders, :img_url, :location, :weekday, :event_time, :topic, :contact, :leaders_note_1, :leaders_note_1_active, :leaders_note_2, :leaders_note_2_active, :leaders_note_3, :leaders_note_3_active, :disabled, :created_at, :updated_at

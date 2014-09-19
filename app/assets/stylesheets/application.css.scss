@@ -28,6 +28,10 @@
   
   $translucent-black: rgba(0,0,0,0.15);
   
+  $translucent-blacker: rgba(0,0,0,0.3);
+  
+  $translucent-blackest: rgba(0,0,0,0.35);
+  
   $white: rgba(255,255,255,1);
   
   $body-bg: $transparent;
@@ -49,6 +53,10 @@
   $well-bg: darken($translucent-black,1%);
   
   a.btn:visited { color: darken(white,2%); }
+  
+  $dropdown-bg: $translucent-blacker;
+  
+  $dropdown-link-hover-bg: $translucent-blackest;
   
 
 

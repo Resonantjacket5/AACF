@@ -1,0 +1,51 @@
+<div class="container">
+
+<div class="row">
+  <div class="col-md-12 col-md-offset-0">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
+
+
+
+
+<h1>Listing large_groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Weekday</th>
+      <th>Location</th>
+      <th>Description</th>
+      <th>Event time</th>
+      <th>Img url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @large_groups.each do |large_group| %>
+      <tr>
+        <td><%= large_group.weekday %></td>
+        <td><%= large_group.location %></td>
+        <td><%= large_group.description %></td>
+        <td><%= large_group.event_time %></td>
+        <td><%= large_group.img_url %></td>
+        <td><%= link_to 'Show', large_group %></td>
+        <td><%= link_to 'Edit', edit_large_group_path(large_group) %></td>
+        <td><%= link_to 'Destroy', large_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Large group', new_large_group_path %>
+
+
+  </div>
+  </div>
+  </div>
+</div>
+</div>

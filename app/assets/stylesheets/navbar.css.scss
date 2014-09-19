@@ -25,3 +25,7 @@ $translucent-black: rgba(0,0,0,0.1);
 .list-group-item a:hover{
 	background-color: black !important;
 }
+
+.dropdown a{
+	color: darken(white,2%) !important;
+}

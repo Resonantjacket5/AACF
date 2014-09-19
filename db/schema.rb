@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140918013543) do
+ActiveRecord::Schema.define(version: 20140919034802) do
+
+  create_table "carousel_items", force: true do |t|
+    t.text     "img_url"
+    t.boolean  "disable"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "description"
+  end
+
+  create_table "large_groups", force: true do |t|
+    t.text     "weekday"
+    t.text     "location"
+    t.text     "description"
+    t.time     "event_time"
+    t.text     "img_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "leaders", force: true do |t|
     t.text     "position"
@@ -32,10 +50,49 @@ ActiveRecord::Schema.define(version: 20140918013543) do
     t.text     "img_url"
   end
 
+  create_table "prayer_times", force: true do |t|
+    t.text     "location"
+    t.time     "event_time"
+    t.text     "weekday"
+    t.text     "img_url"
+    t.boolean  "image_active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "small_groups", force: true do |t|
+    t.text     "leaders"
+    t.text     "img_url"
+    t.text     "location"
+    t.text     "weekday"
+    t.time     "event_time"
+    t.text     "topic"
+    t.text     "contact"
+    t.text     "leaders_note_1"
+    t.boolean  "leaders_note_1_active"
+    t.text     "leaders_note_2"
+    t.boolean  "leaders_note_2_active"
+    t.text     "leaders_note_3"
+    t.boolean  "leaders_note_3_active"
+    t.boolean  "disabled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "static_texts", force: true do |t|
     t.text     "title"
     t.text     "body"
     t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "upcoming_events", force: true do |t|
+    t.text     "title"
+    t.text     "description"
+    t.text     "location"
+    t.datetime "event_time"
+    t.text     "img_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
