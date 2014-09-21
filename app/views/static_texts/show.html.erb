@@ -2,6 +2,9 @@
 
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
 
 
 
@@ -22,8 +25,13 @@
   <%= @static_text.active %>
 </p>
 
-<%= link_to 'Edit', edit_static_text_path(@static_text) %> |
-<%= link_to 'Back', static_texts_path %>
+<%= link_to 'Edit', edit_static_text_path(@static_text), class:"btn btn-warning" %> |
+<%= link_to 'Back', static_texts_path, class: "btn btn-primary"%>
+
+
+
+  </div>
+  </div>
 
 
 

@@ -1,7 +1,7 @@
 <div class="container">
 
 <div class="row">
-  <div class="col-md-12 col-md-offset-0">
+  <div class="col-md-8 col-md-offset-2">
   
   <div class="panel panel-default">
   <div class="panel-body">
@@ -36,8 +36,8 @@
   <%= @large_group.img_url %>
 </p>
 
-<%= link_to 'Edit', edit_large_group_path(@large_group) %> |
-<%= link_to 'Back', large_groups_path %>
+<%= link_to 'Edit', edit_large_group_path(@large_group), class: "btn btn-warning" %> |
+<%= link_to 'Back', large_groups_path, class: "btn btn-primary" %>
 
 
 

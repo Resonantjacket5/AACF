@@ -1,13 +1,16 @@
 <div class="container">
 
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-12 col-md-offset-0">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
 
 
 
 <h1>Listing static_texts</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Title</th>
@@ -23,9 +26,9 @@
         <td><%= static_text.title %></td>
         <td><%= static_text.body %></td>
         <td><%= static_text.active %></td>
-        <td><%= link_to 'Show', static_text %></td>
-        <td><%= link_to 'Edit', edit_static_text_path(static_text) %></td>
-        <td><%= link_to 'Destroy', static_text, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', static_text, class: "btn btn-primary btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_static_text_path(static_text), class: "btn btn-warning btn-xs" %></td>
+        <td><%= link_to 'Destroy', static_text, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,7 +36,12 @@
 
 <br>
 
-<%= link_to 'New Static text', new_static_text_path %>
+<%= link_to 'New Static text', new_static_text_path, class: "btn btn-primary" %>
+
+
+
+  </div>
+  </div>
 
 
   </div>

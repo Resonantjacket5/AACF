@@ -12,7 +12,7 @@
 
 <h1>Listing prayer_times</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Location</th>
@@ -30,11 +30,11 @@
         <td><%= prayer_time.location %></td>
         <td><%= prayer_time.event_time %></td>
         <td><%= prayer_time.weekday %></td>
-        <td><%= prayer_time.img_url %></td>
+        <td><%= image_tag(prayer_time.img_url, class: "img-rounded sample-image") %></td>
         <td><%= prayer_time.image_active %></td>
-        <td><%= link_to 'Show', prayer_time %></td>
-        <td><%= link_to 'Edit', edit_prayer_time_path(prayer_time) %></td>
-        <td><%= link_to 'Destroy', prayer_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', prayer_time, class: "btn btn-info btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_prayer_time_path(prayer_time), class: "btn btn-warning btn-xs" %></td>
+        <td><%= link_to 'Destroy', prayer_time, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -42,7 +42,7 @@
 
 <br>
 
-<%= link_to 'New Prayer time', new_prayer_time_path %>
+<%= link_to 'New Prayer time', new_prayer_time_path, class: "btn btn-warning" %>
 
 
 

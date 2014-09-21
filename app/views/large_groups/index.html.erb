@@ -11,14 +11,14 @@
 
 <h1>Listing large_groups</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Weekday</th>
       <th>Location</th>
       <th>Description</th>
       <th>Event time</th>
-      <th>Img url</th>
+      <th>Img Sample</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -30,10 +30,10 @@
         <td><%= large_group.location %></td>
         <td><%= large_group.description %></td>
         <td><%= large_group.event_time %></td>
-        <td><%= large_group.img_url %></td>
-        <td><%= link_to 'Show', large_group %></td>
-        <td><%= link_to 'Edit', edit_large_group_path(large_group) %></td>
-        <td><%= link_to 'Destroy', large_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= image_tag(large_group.img_url, class: "img-rounded sample-image") %></td>
+        <td><%= link_to 'Show', large_group, class: "btn btn-info btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_large_group_path(large_group), class: "btn btn-warning btn-xs" %></td>
+        <td><%= link_to 'Destroy', large_group, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -41,7 +41,7 @@
 
 <br>
 
-<%= link_to 'New Large group', new_large_group_path %>
+<%= link_to 'New Large group', new_large_group_path, class: "btn btn-warning" %>
 
 
   </div>

@@ -11,7 +11,7 @@
 
 <h1>Listing upcoming_events</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Title</th>
@@ -30,10 +30,10 @@
         <td><%= upcoming_event.description %></td>
         <td><%= upcoming_event.location %></td>
         <td><%= upcoming_event.event_time %></td>
-        <td><%= upcoming_event.img_url %></td>
-        <td><%= link_to 'Show', upcoming_event %></td>
-        <td><%= link_to 'Edit', edit_upcoming_event_path(upcoming_event) %></td>
-        <td><%= link_to 'Destroy', upcoming_event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= image_tag(upcoming_event.img_url, class: "img-rounded sample-image") %></td>
+        <td><%= link_to 'Show', upcoming_event, class: "btn btn-info btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_upcoming_event_path(upcoming_event), class: "btn btn-warning btn-xs" %></td>
+        <td><%= link_to 'Destroy', upcoming_event, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -41,7 +41,7 @@
 
 <br>
 
-<%= link_to 'New Upcoming event', new_upcoming_event_path %>
+<%= link_to 'New Upcoming event', new_upcoming_event_path, class: "btn btn-warning" %>
 
 
   </div>

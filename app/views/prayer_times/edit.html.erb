@@ -1,7 +1,7 @@
 <div class="container">
 
 <div class="row">
-  <div class="col-md-12 col-md-offset-0">
+  <div class="col-md-8 col-md-offset-2">
   
   <div class="panel panel-default">
   <div class="panel-body">
@@ -13,8 +13,8 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @prayer_time %> |
-<%= link_to 'Back', prayer_times_path %>
+<%= link_to 'Show', @prayer_time, class: "btn btn-info" %> |
+<%= link_to 'Back', prayer_times_path, class: "btn btn-primary" %>
 
 
 

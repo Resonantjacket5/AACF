@@ -1,14 +1,17 @@
 <div class="container">
 
 <div class="row">
-  <div class="col-md-8 col-md-offset-2">
+  <div class="col-md-12 col-md-offset-0">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
 
 
 <h1>Listing leaders</h1>
 
 <div class="indexedit-form">
 
-<table>
+<table class = "table-hover table">
   <thead>
     <tr>
       <th>Position</th>
@@ -26,9 +29,9 @@
         <td><%= leader.name %></td>
         <td><%= leader.leadership_position %></td>
         <td><%= image_tag(leader.img_url, class: "img-rounded sample-image") %></td>
-        <td><%= link_to 'Show', leader %></td>
-        <td><%= link_to 'Edit', edit_leader_path(leader) %></td>
-        <td><%= link_to 'Destroy', leader, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', leader, class: "btn btn-primary btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_leader_path(leader), class: "btn btn-warning btn-xs" %></td>
+        <td><%= link_to 'Destroy', leader, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,9 +41,11 @@
 
 <br>
 
-<%= link_to 'New Leader', new_leader_path %>
+<%= link_to 'New Leader', new_leader_path, class: "btn btn-primary" %>
 
-
+  </div>
+  </div>
+  
   </div>
 </div>
 </div>

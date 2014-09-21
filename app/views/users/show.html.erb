@@ -3,6 +3,10 @@
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
 
+  <div class="panel panel-default">
+  <div class="panel-body">
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -20,9 +24,12 @@
   <%= @user.approved %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_path(@user), class:"btn btn-warning" %> |
+<%= link_to 'Back', users_path, class: "btn btn-primary" %>
 
+
+  </div>
+  </div>
 
   </div>
 </div>
