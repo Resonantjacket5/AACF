@@ -5,6 +5,16 @@ Rails.application.routes.draw do
 
   
 
+  resources :attendances
+  
+  get 'events/:id/attendance', to: 'events#attendance', as: 'event_attendance'
+  
+  post 'events/:id/attended', to: 'events#attended', as: 'event_attended'
+  
+  resources :events 
+
+  resources :students
+
   get 'homepage/index'
 
   resources :carousel_items

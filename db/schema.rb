@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140919034802) do
+ActiveRecord::Schema.define(version: 20140921234559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attendances", force: true do |t|
+    t.integer  "student_id"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "comment"
+  end
+
+  add_index "attendances", ["event_id"], name: "index_attendances_on_event_id", using: :btree
+  add_index "attendances", ["student_id"], name: "index_attendances_on_student_id", using: :btree
 
   create_table "carousel_items", force: true do |t|
     t.text     "img_url"
@@ -22,6 +33,15 @@ ActiveRecord::Schema.define(version: 20140919034802) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
+  end
+
+  create_table "events", force: true do |t|
+    t.text     "name"
+    t.text     "location"
+    t.text     "event_type"
+    t.datetime "event_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "large_groups", force: true do |t|
@@ -86,6 +106,15 @@ ActiveRecord::Schema.define(version: 20140919034802) do
     t.text     "title"
     t.text     "body"
     t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "students", force: true do |t|
+    t.text     "name"
+    t.integer  "graduation_year"
+    t.text     "email"
+    t.boolean  "contact"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
