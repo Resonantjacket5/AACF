@@ -1,0 +1,5 @@
+
+
+  <% @Freshmen.each do |student| %>
+    <%= link_to student.name, student_path(student), class: "btn btn-primary btn-xs" %> 
+  <% end %>

@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy, :attendance]
-  before_action :set_students_graduation_year, only: [:show, :attendance]
-  before_action :people_present, only: [:show]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :attendance, :refresh_div]
+  before_action :set_students_graduation_year, only: [:show, :attendance, :refresh_div]
+  before_action :people_present, only: [:show, :refresh_div]
 
   # GET /events
   # GET /events.json
@@ -26,6 +26,14 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+  end
+  
+  def refresh_div
+  
+    respond_to do |format|
+      format.js
+    end
+  
   end
   
   def attendance

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   
   post 'events/:id/attended', to: 'events#attended', as: 'event_attended'
   
+  get 'events/:id/refresh_div', to: 'events#refresh_div', as: 'refresh_div'
+  
   resources :events 
 
   resources :students

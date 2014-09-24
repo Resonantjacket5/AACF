@@ -9,9 +9,11 @@
   
   <h1 class="text-center"> <%= "#{@event.name} Attendance"%> </h1>
   
-  <%= link_to 'Back to Events', events_path, class: "btn btn-info"%>
+  <%= link_to 'Back to all Events', events_path, class: "btn btn-info"%>
   
-  <%= link_to 'Show', event_path, class: "btn btn-warning text-right" %>
+  <%= link_to 'Show Event', event_path, class: "btn btn-warning text-right" %>
+  
+  <%= link_to 'Refresh Present', refresh_div_path, remote: true, class: "btn btn-primary" %>
   </div>
   </div>
   </div>
@@ -40,15 +42,29 @@
         <%= f.hidden_field :event_id, :value => @event.id %>
       </div>
       <div class="actions">
-        <%= f.submit student.name, class:"btn btn-primary attendance-btn #{student.id}"%>
+        <%= f.submit student.name, remote: true, class:"btn btn-primary attendance-btn #{student.id}"%>
       </div>
     <% end %>
 
   <% end %>
   
-    </div>
   </div>
   </div>
+  </div>
+  
+  <div class="col-md-3 col-md-offset-0">
+  <div class="panel panel-default">
+  <div class="panel-body">
+  
+    <h3> Seniors Present </h3>
+      <div id="refresh_seniors">
+      </div>
+  </div>
+  </div>
+  </div>
+  
+  
+  
 </div>
 </div>
 
@@ -90,6 +106,23 @@
   </div>
   </div>
   </div>
+  
+  
+  <div class="col-md-3 col-md-offset-0">
+  <div class="panel panel-default">
+  <div class="panel-body">
+  
+    <h3> Juniors Present </h3>
+    <div id="refresh_juniors">
+    
+    </div>
+  
+  </div>
+  </div>
+  </div>
+  
+  
+  
 </div>
 </div>
 
@@ -127,6 +160,21 @@
   </div>
   </div>
   </div>
+  
+  <div class="col-md-3 col-md-offset-0">
+  <div class="panel panel-default">
+  <div class="panel-body">
+  
+    <h3> Sophomores Present </h3>
+    <div id="refresh_sophomores">
+    
+    </div>
+  
+  </div>
+  </div>
+  </div>
+  
+   
 </div>
 </div>
  
@@ -166,6 +214,22 @@
   </div>
   </div>
   </div>
+  
+  
+  <div class="col-md-3 col-md-offset-0">
+  <div class="panel panel-default">
+  <div class="panel-body">
+  
+    <h3> Freshmen Present </h3>
+    <div id="refresh_freshmen">
+    
+    </div>
+  
+  </div>
+  </div>
+  </div>
+  
+  
 </div>
 </div>
   
@@ -200,9 +264,23 @@
 
     <% end %>
     
+  </div>
+  </div>
+  </div>
+  
+  <div class="col-md-3 col-md-offset-0">
+  <div class="panel panel-default">
+  <div class="panel-body">
+  
+    <h3> Others Present </h3>
+    <div id="refresh_others">
+    
     </div>
+  
   </div>
   </div>
+  </div>
+  
 </div>
 </div>
 

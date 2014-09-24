@@ -34,7 +34,6 @@ class AttendancesController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @attendance.errors, status: :unprocessable_entity }
-        format.js {flash.now[:notice] = "Could not save client"}
       end
     end
   end
