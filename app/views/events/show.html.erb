@@ -46,7 +46,7 @@
   <h1> Seniors </h1>
   
     <ul>
-      <% @Seniors.each do |student| %>
+      <% @Seniors_present.each do |student| %>
         <li> <%= student.name %> </li>
       <% end %>
     </ul>
@@ -54,7 +54,7 @@
   <h1> Juniors </h1>
   
     <ul>
-      <% @Juniors.each do |student| %>
+      <% @Juniors_present.each do |student| %>
         <li> <%= student.name %> </li>
       <% end %>
     </ul>
@@ -62,7 +62,7 @@
   <h1> Sophomores </h1>
   
     <ul>
-      <% @Sophomores.each do |student| %>
+      <% @Sophomores_present.each do |student| %>
         <li> <%= student.name %> </li>
       <% end %>
     </ul>
@@ -70,7 +70,7 @@
   <h1> Freshmen </h1>
   
     <ul>
-      <% @Freshmen.each do |student| %>
+      <% @Freshmen_present.each do |student| %>
         <li> <%= student.name %> </li>
       <% end %>
     </ul>
@@ -78,7 +78,7 @@
   <h1> Others </h1>
   
     <ul>
-      <% @Others.each do |student| %>
+      <% @Others_present.each do |student| %>
         <li> <%= student.name %> </li>
       <% end %>
     </ul>

@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy, :attendance, :refresh_div]
   before_action :set_students_graduation_year, only: [:show, :attendance, :refresh_div]
-  before_action :people_present, only: [:show, :refresh_div]
+  before_action :people_present, only: [:show, :refresh_div, :attendance]
 
   # GET /events
   # GET /events.json
@@ -39,6 +39,8 @@ class EventsController < ApplicationController
   def attendance
     
     @attendance = Attendance.new
+    
+    @students = @event.students
     
     @Seniors = Student.where(graduation_year: @senior)
     @Juniors = Student.where(graduation_year: @junior)
@@ -124,11 +126,11 @@ class EventsController < ApplicationController
     end
     
     def people_present
-      @Seniors = @event.students.where(graduation_year: @senior)
-      @Juniors = @event.students.where(graduation_year: @junior)
-      @Sophomores = @event.students.where(graduation_year: @sophomore)
-      @Freshmen = @event.students.where(graduation_year: @freshman)
-      @Others = @event.students.where("graduation_year < #{@senior} OR graduation_year > #{@freshman}")
+      @Seniors_present = @event.students.where(graduation_year: @senior)
+      @Juniors_present = @event.students.where(graduation_year: @junior)
+      @Sophomores_present = @event.students.where(graduation_year: @sophomore)
+      @Freshmen_present = @event.students.where(graduation_year: @freshman)
+      @Others_present = @event.students.where("graduation_year < #{@senior} OR graduation_year > #{@freshman}")
     end
     
     

@@ -33,17 +33,21 @@
   
   <% @Seniors.each do |student| %>
   
+    <% if @students.where(id: student.id).blank? %>
+  
       <%= form_for(@attendance, remote: true) do |f| %>
 
-      <div class="field">
-        <%= f.hidden_field :student_id, :value => student.id%>
-      </div>
-      <div class="field">
-        <%= f.hidden_field :event_id, :value => @event.id %>
-      </div>
-      <div class="actions">
-        <%= f.submit student.name, remote: true, class:"btn btn-primary attendance-btn #{student.id}"%>
-      </div>
+        <div class="field">
+          <%= f.hidden_field :student_id, :value => student.id%>
+        </div>
+        <div class="field">
+          <%= f.hidden_field :event_id, :value => @event.id %>
+        </div>
+        <div class="actions">
+          <%= f.submit student.name, remote: true, class:"btn btn-primary attendance-btn #{student.id}"%>
+        </div>
+      <% end %>
+    
     <% end %>
 
   <% end %>
@@ -58,6 +62,7 @@
   
     <h3> Seniors Present </h3>
       <div id="refresh_seniors">
+       
       </div>
   </div>
   </div>
@@ -87,6 +92,8 @@
 
   <% @Juniors.each do |student| %>
   
+    <% if @students.where(id: student.id).blank? %>
+  
       <%= form_for(@attendance, remote: true) do |f| %>
 
       <div class="field">
@@ -99,6 +106,7 @@
         <%= f.submit student.name, class:"btn btn-primary attendance-btn #{student.id}"%>
       </div>
     <% end %>
+  <% end %>
 
   <% end %>
 
@@ -114,7 +122,7 @@
   
     <h3> Juniors Present </h3>
     <div id="refresh_juniors">
-    
+      
     </div>
   
   </div>
@@ -142,6 +150,8 @@
 
   <% @Sophomores.each do |student| %>
   
+  <% if @students.where(id: student.id).blank? %>
+  
       <%= form_for(@attendance, remote: true) do |f| %>
 
       <div class="field">
@@ -154,7 +164,7 @@
         <%= f.submit student.name, class:"btn btn-primary #{student.id}"%>
       </div>
     <% end %>
-
+  <% end %>
   <% end %>
   
   </div>
@@ -167,7 +177,7 @@
   
     <h3> Sophomores Present </h3>
     <div id="refresh_sophomores">
-    
+      
     </div>
   
   </div>
@@ -195,6 +205,8 @@
   <h1 class="text-center"> Freshmen </h1>
   
     <% @Freshmen.each do |student| %>
+    
+    <% if @students.where(id: student.id).blank? %>
   
       <%= form_for(@attendance, remote: true) do |f| %>
 
@@ -207,6 +219,8 @@
       <div class="actions">
         <%= f.submit student.name, class:"btn btn-primary #{student.id}"%>
       </div>
+    <% end %>
+    
     <% end %>
 
   <% end %>
@@ -222,7 +236,7 @@
   
     <h3> Freshmen Present </h3>
     <div id="refresh_freshmen">
-    
+      
     </div>
   
   </div>
@@ -248,6 +262,8 @@
   <h1 class="text-center"> Others </h1>
   
     <% @Others.each do |student| %>
+    
+    <% if @students.where(id: student.id).blank? %>
   
       <%= form_for(@attendance, remote: true) do |f| %>
 
@@ -261,6 +277,8 @@
         <%= f.submit student.name, class:"btn btn-primary #{student.id}"%>
       </div>
       <% end %>
+      
+    <% end %>
 
     <% end %>
     
@@ -274,7 +292,7 @@
   
     <h3> Others Present </h3>
     <div id="refresh_others">
-    
+      
     </div>
   
   </div>
