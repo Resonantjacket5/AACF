@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  graduation_year: 1
+  email: MyText
+  contact: false
+
+two:
+  name: MyText
+  graduation_year: 1
+  email: MyText
+  contact: false

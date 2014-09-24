@@ -1,0 +1,209 @@
+
+<div class="container">
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+  
+  <div class="panel panel-default">
+  <div class="list-group-item">
+  
+  <h1 class="text-center"> <%= "#{@event.name} Attendance"%> </h1>
+  
+  <%= link_to 'Back to Events', events_path, class: "btn btn-info"%>
+  
+  <%= link_to 'Show', event_path, class: "btn btn-warning text-right" %>
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+
+
+<div class="container">
+
+<div class="row">
+  <div class="col-md-5 col-md-offset-2">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
+  
+  <h1 class="text-center"> Seniors </h1>
+  
+  <% @Seniors.each do |student| %>
+  
+      <%= form_for(@attendance, remote: true) do |f| %>
+
+      <div class="field">
+        <%= f.hidden_field :student_id, :value => student.id%>
+      </div>
+      <div class="field">
+        <%= f.hidden_field :event_id, :value => @event.id %>
+      </div>
+      <div class="actions">
+        <%= f.submit student.name, class:"btn btn-primary attendance-btn #{student.id}"%>
+      </div>
+    <% end %>
+
+  <% end %>
+  
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+
+  
+  
+  <div id = "change_text">
+  </div>
+
+
+<div class="container">
+
+<div class="row">
+  <div class="col-md-5 col-md-offset-2">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
+
+
+  <h1 class="text-center"> Juniors </h1>
+
+  <% @Juniors.each do |student| %>
+  
+      <%= form_for(@attendance, remote: true) do |f| %>
+
+      <div class="field">
+        <%= f.hidden_field :student_id, :value => student.id%>
+      </div>
+      <div class="field">
+        <%= f.hidden_field :event_id, :value => @event.id %>
+      </div>
+      <div class="actions">
+        <%= f.submit student.name, class:"btn btn-primary attendance-btn #{student.id}"%>
+      </div>
+    <% end %>
+
+  <% end %>
+
+  
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+
+
+
+
+<div class="container">
+
+<div class="row">
+  <div class="col-md-5 col-md-offset-2">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
+  
+
+  <h1 class="text-center"> Sophomores </h1>
+
+  <% @Sophomores.each do |student| %>
+  
+      <%= form_for(@attendance, remote: true) do |f| %>
+
+      <div class="field">
+        <%= f.hidden_field :student_id, :value => student.id%>
+      </div>
+      <div class="field">
+        <%= f.hidden_field :event_id, :value => @event.id %>
+      </div>
+      <div class="actions">
+        <%= f.submit student.name, class:"btn btn-primary #{student.id}"%>
+      </div>
+    <% end %>
+
+  <% end %>
+  
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+ 
+ 
+ 
+ 
+ 
+<div class="container">
+
+<div class="row">
+  <div class="col-md-5 col-md-offset-2">
+  
+  <div class="panel panel-default">
+  <div class="panel-body"> 
+  
+  
+  
+  <h1 class="text-center"> Freshmen </h1>
+  
+    <% @Freshmen.each do |student| %>
+  
+      <%= form_for(@attendance, remote: true) do |f| %>
+
+      <div class="field">
+        <%= f.hidden_field :student_id, :value => student.id%>
+      </div>
+      <div class="field">
+        <%= f.hidden_field :event_id, :value => @event.id %>
+      </div>
+      <div class="actions">
+        <%= f.submit student.name, class:"btn btn-primary #{student.id}"%>
+      </div>
+    <% end %>
+
+  <% end %>
+  
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+  
+  
+  
+  
+  
+<div class="container">
+
+<div class="row">
+  <div class="col-md-5 col-md-offset-2">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
+  
+  <h1 class="text-center"> Others </h1>
+  
+    <% @Others.each do |student| %>
+  
+      <%= form_for(@attendance, remote: true) do |f| %>
+
+      <div class="field">
+        <%= f.hidden_field :student_id, :value => student.id%>
+      </div>
+      <div class="field">
+        <%= f.hidden_field :event_id, :value => @event.id %>
+      </div>
+      <div class="actions">
+        <%= f.submit student.name, class:"btn btn-primary #{student.id}"%>
+      </div>
+      <% end %>
+
+    <% end %>
+    
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+
+
