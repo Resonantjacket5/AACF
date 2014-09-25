@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  before_action :set_students_graduation_year, only: [:new]
 
   # GET /students
   # GET /students.json
@@ -71,5 +72,19 @@ class StudentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
       params.require(:student).permit(:name, :graduation_year, :email, :contact)
+    end
+    
+    def set_students_graduation_year
+      if Time.now.month >= 7
+        @senior = Time.now.year + 1
+        @junior = Time.now.year + 2
+        @sophomore = Time.now.year + 3
+        @freshman = Time.now.year + 4
+      else
+        @senior = Time.now.year
+        @junior = Time.now.year + 1
+        @sophomore = Time.now.year + 2
+        @freshman = Time.now.year + 3
+      end
     end
 end

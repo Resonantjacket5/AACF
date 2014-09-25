@@ -10,7 +10,7 @@
 
 <h1>New student</h1>
 
-<%= render 'form' %>
+<%= render 'form_new' %>
 
 <%= link_to 'Back', students_path, class: "btn btn-primary" %>
 
@@ -19,5 +19,24 @@
   </div>
   </div>
   </div>
+  
+  
+  <div class="col-md-3 col-md-offset-0">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
+  
+  <h3> Tip for Graduation Year </h3>
+  
+  <p> Senior: <%= @senior %> </p>
+  <p> Junior: <%= @junior %> </p>
+  <p> Sophomore: <%= @sophomore %> </p>
+  <p> Freshman: <%= @freshman %> </p>
+  <p> **If none of the above, select 0000 and change this in the edit page </p>
+  
+  </div>
+  </div>
+  </div>
+  
 </div>
 </div>

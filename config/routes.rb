@@ -40,6 +40,8 @@ Rails.application.routes.draw do
   
   get 'dashboards/index'
   
+  get 'dashboards/attendance_dashboard', to: 'dashboards#attendance_dashboard', as: 'attendance_dashboard'
+  
   get '/leaders/tabs', to: 'leaders#tabs', as: 'tabs'
   
   get '/static_texts/body', to: 'static_texts#body', as: 'body'
