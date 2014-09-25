@@ -1,5 +1,14 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container">
+
+<div class="row">
+  <div class="col-md-3 col-md-offset-2">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
+
+
 <p>
   <strong>Name:</strong>
   <%= @student.name %>
@@ -20,5 +29,32 @@
   <%= @student.contact %>
 </p>
 
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<%= link_to 'Edit', edit_student_path(@student), class: "btn btn-warning" %> |
+<%= link_to 'Back', students_path, class: "btn btn-primary" %>
+
+
+  </div>
+  </div>
+  </div>
+  
+  
+  
+  <div class="col-md-5 col-md-offset-0">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
+  
+    <h3> Events Attended: </h3>
+      
+    <% @events.each do |event| %>
+      <%= event.name %> <br/>
+    <% end %>
+  
+  </div>
+  </div>
+  </div>
+  
+  
+  
+</div>
+</div>

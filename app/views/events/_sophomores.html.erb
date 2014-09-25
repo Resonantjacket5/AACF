@@ -1,5 +1,5 @@
 
-
+<h3> Sophs Present: <%= @Sophomores_present.count%> </h3>
   <% @Sophomores_present.each do |student| %>
-    <%= link_to student.name, student_path(student), class: "btn btn-success" %> 
+    <%= link_to student.name, destroy_attendance_path(event_id: @event.id, student_id: student.id), method: :delete, remote: true, class: "btn btn-success #{student.id}" %>  
   <% end %>

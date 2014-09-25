@@ -3,7 +3,7 @@ Rails.application.routes.draw do
  
   
 
-  
+  delete 'attendance/destroy_attendance', to: 'attendances#destroy_attendance', as: 'destroy_attendance'
 
   resources :attendances
   

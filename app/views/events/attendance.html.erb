@@ -9,11 +9,18 @@
   
   <h1 class="text-center"> <%= "#{@event.name} Attendance"%> </h1>
   
+  <h2 class = "text-right"> Total: <%= @students.count %> </h2>
+  
   <%= link_to 'Back to all Events', events_path, class: "btn btn-info"%>
   
   <%= link_to 'Show Event', event_path, class: "btn btn-warning text-right" %>
   
-  <%= link_to 'Refresh Present', refresh_div_path, remote: true, class: "btn btn-primary" %>
+  <%= link_to 'Refresh Attendance', event_attendance_path(@event), class: "btn btn-primary" %>
+  
+  <%= link_to 'Refresh Present', refresh_div_path, remote: true, class: "btn btn-success" %>
+  
+  <%= link_to 'New Student', new_student_path, class: "btn btn-danger" %>
+  
   </div>
   </div>
   </div>
@@ -60,9 +67,9 @@
   <div class="panel panel-default">
   <div class="panel-body">
   
-    <h3> Seniors Present </h3>
+    
       <div id="refresh_seniors">
-       
+       <h3> Seniors Present: <%= @Seniors_present.count%> </h3>
       </div>
   </div>
   </div>
@@ -120,9 +127,9 @@
   <div class="panel panel-default">
   <div class="panel-body">
   
-    <h3> Juniors Present </h3>
+    
     <div id="refresh_juniors">
-      
+      <h3> Juniors Present: <%= @Juniors_present.count%> </h3>
     </div>
   
   </div>
@@ -175,9 +182,9 @@
   <div class="panel panel-default">
   <div class="panel-body">
   
-    <h3> Sophomores Present </h3>
+    
     <div id="refresh_sophomores">
-      
+      <h3> Sophs Present: <%= @Sophomores_present.count%> </h3>
     </div>
   
   </div>
@@ -234,9 +241,9 @@
   <div class="panel panel-default">
   <div class="panel-body">
   
-    <h3> Freshmen Present </h3>
+    
     <div id="refresh_freshmen">
-      
+      <h3> Freshmen Present: <%= @Freshmen_present.count%> </h3>
     </div>
   
   </div>
@@ -290,9 +297,9 @@
   <div class="panel panel-default">
   <div class="panel-body">
   
-    <h3> Others Present </h3>
+    
     <div id="refresh_others">
-      
+      <h3> Others Present: <%= @Others_present.count%> </h3>
     </div>
   
   </div>

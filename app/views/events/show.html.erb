@@ -25,7 +25,12 @@
 
 <p>
   <strong>Event date:</strong>
-  <%= @event.event_date %>
+  <%= @event.event_date.strftime("%D %r") %>
+</p>
+
+<p>
+  <strong>Total Students:</strong>
+  <%= @Students.count %>
 </p>
 
 <%= link_to 'Attendance', event_attendance_path, class: "btn btn-primary" %> <br /> <br />
@@ -43,45 +48,45 @@
   <div class="panel panel-default">
   <div class="panel-body">
   
-  <h1> Seniors </h1>
+  <h1> Seniors: <%= @Seniors_present.count%> </h1>
   
-    <ul>
+    
       <% @Seniors_present.each do |student| %>
-        <li> <%= student.name %> </li>
+         <%= link_to student.name, student_path(student), class: "btn btn-success" %>
       <% end %>
-    </ul>
+    
   
-  <h1> Juniors </h1>
+  <h1> Juniors: <%= @Juniors_present.count %> </h1>
   
-    <ul>
+    
       <% @Juniors_present.each do |student| %>
-        <li> <%= student.name %> </li>
+        <%= link_to student.name, student_path(student), class: "btn btn-success" %>
       <% end %>
-    </ul>
+    
 
-  <h1> Sophomores </h1>
+  <h1> Sophomores: <%= @Sophomores_present.count %> </h1>
   
-    <ul>
+    
       <% @Sophomores_present.each do |student| %>
-        <li> <%= student.name %> </li>
+        <%= link_to student.name, student_path(student), class: "btn btn-success" %>
       <% end %>
-    </ul>
     
-  <h1> Freshmen </h1>
+    
+  <h1> Freshmen: <%= @Freshmen_present.count %> </h1>
   
-    <ul>
+    
       <% @Freshmen_present.each do |student| %>
-        <li> <%= student.name %> </li>
+        <%= link_to student.name, student_path(student), class: "btn btn-success" %>
       <% end %>
-    </ul>
     
-  <h1> Others </h1>
+    
+  <h1> Others: <%= @Others_present.count %> </h1>
   
-    <ul>
+    
       <% @Others_present.each do |student| %>
-        <li> <%= student.name %> </li>
+        <%= link_to student.name, student_path(student), class: "btn btn-success" %>
       <% end %>
-    </ul>
+    
   
   
   

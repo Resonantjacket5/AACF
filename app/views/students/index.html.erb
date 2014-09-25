@@ -1,6 +1,15 @@
+<div class="container">
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
+
+
 <h1>Listing students</h1>
 
-<table>
+<table class = "table table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -18,9 +27,9 @@
         <td><%= student.graduation_year %></td>
         <td><%= student.email %></td>
         <td><%= student.contact %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', student, class: "btn btn-info btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_student_path(student), class: "btn btn-warning btn-xs" %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +37,11 @@
 
 <br>
 
-<%= link_to 'New Student', new_student_path %>
+<%= link_to 'New Student', new_student_path, class: "btn btn-warning" %>
+
+
+  </div>
+  </div>
+  </div>
+</div>
+</div>

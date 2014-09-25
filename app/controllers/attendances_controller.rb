@@ -51,6 +51,19 @@ class AttendancesController < ApplicationController
       end
     end
   end
+  
+  def destroy_attendance
+    @attendance = Attendance.where("event_id = #{params[:event_id]} AND student_id = #{params[:student_id]}").first
+    @attendance.destroy
+    
+    @student_id = @attendance.student_id
+    
+    respond_to do |format|
+      format.html 
+      format.json { head :no_content }
+      format.js
+    end
+  end
 
   # DELETE /attendances/1
   # DELETE /attendances/1.json

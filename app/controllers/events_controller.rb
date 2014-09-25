@@ -30,6 +30,8 @@ class EventsController < ApplicationController
   
   def refresh_div
   
+    @event_attendances = Attendance.where(event_id: @event.id)
+  
     respond_to do |format|
       format.js
     end
@@ -41,6 +43,8 @@ class EventsController < ApplicationController
     @attendance = Attendance.new
     
     @students = @event.students
+    
+    
     
     @Seniors = Student.where(graduation_year: @senior)
     @Juniors = Student.where(graduation_year: @junior)
