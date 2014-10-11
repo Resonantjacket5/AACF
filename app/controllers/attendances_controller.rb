@@ -1,5 +1,8 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: [:show, :edit, :update, :destroy]
+  before_action :set_students_graduation_year, only: [:create]
+  
+  
 
   # GET /attendances
   # GET /attendances.json
@@ -25,6 +28,14 @@ class AttendancesController < ApplicationController
   # POST /attendances.json
   def create
     @attendance = Attendance.new(attendance_params)
+    
+    @event = Event.where(id: @attendance.event_id).first
+    
+    @Seniors_present = @event.students.where(graduation_year: @senior)
+    @Juniors_present = @event.students.where(graduation_year: @junior)
+    @Sophomores_present = @event.students.where(graduation_year: @sophomore)
+    @Freshmen_present = @event.students.where(graduation_year: @freshman)
+    @Others_present = @event.students.where("graduation_year < #{@senior} OR graduation_year > #{@freshman}")
 
     respond_to do |format|
       if @attendance.save
@@ -85,4 +96,34 @@ class AttendancesController < ApplicationController
     def attendance_params
       params.require(:attendance).permit(:student_id, :event_id, :comment)
     end
+    
+    
+    def set_students_graduation_year
+      if Time.now.month >= 7
+        @senior = Time.now.year + 1
+        @junior = Time.now.year + 2
+        @sophomore = Time.now.year + 3
+        @freshman = Time.now.year + 4
+      else
+        @senior = Time.now.year
+        @junior = Time.now.year + 1
+        @sophomore = Time.now.year + 2
+        @freshman = Time.now.year + 3
+      end
+    end
+    
+    def set_event
+    yield
+      @event = Event.where(id: @attendance.event_id).first
+    end  
+    
+    def people_present
+      @Seniors_present = @event.students.where(graduation_year: @senior)
+      @Juniors_present = @event.students.where(graduation_year: @junior)
+      @Sophomores_present = @event.students.where(graduation_year: @sophomore)
+      @Freshmen_present = @event.students.where(graduation_year: @freshman)
+      @Others_present = @event.students.where("graduation_year < #{@senior} OR graduation_year > #{@freshman}")
+    end
+    
+    
 end

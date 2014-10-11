@@ -1,1 +1,6 @@
 $(".<%= @attendance.student_id %>").slideUp();
+$("#refresh_seniors").html("<%= j (render 'events/seniors') %>");
+$("#refresh_juniors").html("<%= j (render 'events/juniors') %>");
+$("#refresh_sophomores").html("<%= j (render 'events/sophomores') %>");
+$("#refresh_freshmen").html("<%= j (render 'events/freshmen') %>");
+$("#refresh_others").html("<%= j (render 'events/others') %>");
