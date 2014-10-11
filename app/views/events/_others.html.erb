@@ -1,5 +1,20 @@
+    <% @Others.each do |student| %>
+    
+    <% if @students.where(id: student.id).blank? %>
+  
+      <%= form_for(@attendance, remote: true) do |f| %>
 
-<h3> Others Present: <%= @Others_present.count%> </h3>
-  <% @Others_present.each do |student| %>
-    <%= link_to student.name, destroy_attendance_path(event_id: @event.id, student_id: student.id), method: :delete, remote: true, class: "btn btn-success #{student.id}" %> 
-  <% end %>
+      <div class="field">
+        <%= f.hidden_field :student_id, :value => student.id%>
+      </div>
+      <div class="field">
+        <%= f.hidden_field :event_id, :value => @event.id %>
+      </div>
+      <div class="actions">
+        <%= f.submit student.name, class:"btn btn-primary #{student.id}"%>
+      </div>
+      <% end %>
+      
+    <% end %>
+
+    <% end %>

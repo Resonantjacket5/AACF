@@ -1,6 +1,6 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: [:show, :edit, :update, :destroy]
-  before_action :set_students_graduation_year, only: [:create]
+  before_action :set_students_graduation_year, only: [:create, :destroy_attendance]
   
   
 
@@ -36,27 +36,27 @@ class AttendancesController < ApplicationController
       when @senior
         @Seniors_present = @event.students.where(graduation_year: @senior)
         respond_to do |format|
-          format.js { render 'senior.js.erb' }
+          format.js { render 'senior_present.js.erb' }
         end
       when @junior
         @Juniors_present = @event.students.where(graduation_year: @junior)
         respond_to do |format|
-          format.js { render 'junior.js.erb' }
+          format.js { render 'junior_present.js.erb' }
         end
       when @sophomore
         @Sophomores_present = @event.students.where(graduation_year: @sophomore)
         respond_to do |format|
-          format.js { render 'sophomore.js.erb' }
+          format.js { render 'sophomore_present.js.erb' }
         end
       when @freshman
         @Freshmen_present = @event.students.where(graduation_year: @freshman)
         respond_to do |format|
-          format.js { render 'freshman.js.erb' }
+          format.js { render 'freshman_present.js.erb' }
         end
       else
         @Others_present = @event.students.where("graduation_year < #{@senior} OR graduation_year > #{@freshman}")
         respond_to do |format|
-          format.js { render 'other.js.erb' }
+          format.js { render 'other_present.js.erb' }
         end
     end
   end
@@ -81,11 +81,38 @@ class AttendancesController < ApplicationController
     
     @student_id = @attendance.student_id
     
-    respond_to do |format|
-      format.html 
-      format.json { head :no_content }
-      format.js
+    @event = Event.where(id: @attendance.event_id).first
+    @students = @event.students
+    
+    case @attendance.student.graduation_year
+      when @senior
+        @Seniors = Student.where(graduation_year: @senior)
+        respond_to do |format|
+          format.js { render 'senior.js.erb' }
+        end
+      when @junior
+        @Juniors = Student.where(graduation_year: @junior)
+        respond_to do |format|
+          format.js { render 'junior.js.erb' }
+        end
+      when @sophomore
+        @Sophomores = Student.where(graduation_year: @sophomore)
+        respond_to do |format|
+          format.js { render 'sophomore.js.erb' }
+        end
+      when @freshman
+        @Freshmen = Student.where(graduation_year: @freshman)
+        respond_to do |format|
+          format.js { render 'freshman.js.erb' }
+        end
+      else
+        @Others = Student.where("graduation_year < #{@senior} OR graduation_year > #{@freshman}")
+        respond_to do |format|
+          format.js { render 'other.js.erb' }
+        end
     end
+    
+
   end
 
   # DELETE /attendances/1

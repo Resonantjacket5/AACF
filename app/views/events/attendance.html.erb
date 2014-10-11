@@ -38,6 +38,8 @@
   
   <h1 class="text-center"> Seniors </h1>
   
+  <div id="seniors">
+  
   <% @Seniors.each do |student| %>
   
     <% if @students.where(id: student.id).blank? %>
@@ -58,6 +60,7 @@
     <% end %>
 
   <% end %>
+  </div>
   
   </div>
   </div>
@@ -96,6 +99,8 @@
 
 
   <h1 class="text-center"> Juniors </h1>
+  
+  <div id="juniors">
 
   <% @Juniors.each do |student| %>
   
@@ -116,6 +121,7 @@
   <% end %>
 
   <% end %>
+  </div>
 
   
   </div>
@@ -154,6 +160,8 @@
   
 
   <h1 class="text-center"> Sophomores </h1>
+  
+  <div id="sophomores">
 
   <% @Sophomores.each do |student| %>
   
@@ -173,6 +181,7 @@
     <% end %>
   <% end %>
   <% end %>
+  </div>
   
   </div>
   </div>
@@ -211,6 +220,8 @@
   
   <h1 class="text-center"> Freshmen </h1>
   
+  <div id="freshmen">
+  
     <% @Freshmen.each do |student| %>
     
     <% if @students.where(id: student.id).blank? %>
@@ -231,6 +242,7 @@
     <% end %>
 
   <% end %>
+  </div>
   
   </div>
   </div>
@@ -268,6 +280,8 @@
   
   <h1 class="text-center"> Others </h1>
   
+  <div id = "others">
+  
     <% @Others.each do |student| %>
     
     <% if @students.where(id: student.id).blank? %>
@@ -288,6 +302,7 @@
     <% end %>
 
     <% end %>
+  </div>
     
   </div>
   </div>
