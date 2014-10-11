@@ -28,24 +28,36 @@ class AttendancesController < ApplicationController
   # POST /attendances.json
   def create
     @attendance = Attendance.new(attendance_params)
+    @attendance.save
     
     @event = Event.where(id: @attendance.event_id).first
-    
-    @Seniors_present = @event.students.where(graduation_year: @senior)
-    @Juniors_present = @event.students.where(graduation_year: @junior)
-    @Sophomores_present = @event.students.where(graduation_year: @sophomore)
-    @Freshmen_present = @event.students.where(graduation_year: @freshman)
-    @Others_present = @event.students.where("graduation_year < #{@senior} OR graduation_year > #{@freshman}")
 
-    respond_to do |format|
-      if @attendance.save
-        format.html { redirect_to @attendance, notice: 'Attendance was successfully created.' }
-        format.json { render :show, status: :created, location: @attendance }
-        format.js
+    case @attendance.student.graduation_year
+      when @senior
+        @Seniors_present = @event.students.where(graduation_year: @senior)
+        respond_to do |format|
+          format.js { render 'senior.js.erb' }
+        end
+      when @junior
+        @Juniors_present = @event.students.where(graduation_year: @junior)
+        respond_to do |format|
+          format.js { render 'junior.js.erb' }
+        end
+      when @sophomore
+        @Sophomores_present = @event.students.where(graduation_year: @sophomore)
+        respond_to do |format|
+          format.js { render 'sophomore.js.erb' }
+        end
+      when @freshman
+        @Freshmen_present = @event.students.where(graduation_year: @freshman)
+        respond_to do |format|
+          format.js { render 'freshman.js.erb' }
+        end
       else
-        format.html { render :new }
-        format.json { render json: @attendance.errors, status: :unprocessable_entity }
-      end
+        @Others_present = @event.students.where("graduation_year < #{@senior} OR graduation_year > #{@freshman}")
+        respond_to do |format|
+          format.js { render 'other.js.erb' }
+        end
     end
   end
 
