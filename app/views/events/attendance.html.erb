@@ -38,29 +38,9 @@
   
   <h1 class="text-center"> Seniors </h1>
   
-  <div id="seniors">
-  
-  <% @Seniors.each do |student| %>
-  
-    <% if @students.where(id: student.id).blank? %>
-  
-      <%= form_for(@attendance, remote: true) do |f| %>
-
-        <div class="field">
-          <%= f.hidden_field :student_id, :value => student.id%>
-        </div>
-        <div class="field">
-          <%= f.hidden_field :event_id, :value => @event.id %>
-        </div>
-        <div class="actions">
-          <%= f.submit student.name, remote: true, class:"btn btn-primary attendance-btn #{student.id}"%>
-        </div>
-      <% end %>
-    
-    <% end %>
-
-  <% end %>
-  </div>
+    <div id="seniors">
+      <%= render "seniors"%>
+    </div>
   
   </div>
   </div>
@@ -100,28 +80,9 @@
 
   <h1 class="text-center"> Juniors </h1>
   
-  <div id="juniors">
-
-  <% @Juniors.each do |student| %>
-  
-    <% if @students.where(id: student.id).blank? %>
-  
-      <%= form_for(@attendance, remote: true) do |f| %>
-
-      <div class="field">
-        <%= f.hidden_field :student_id, :value => student.id%>
-      </div>
-      <div class="field">
-        <%= f.hidden_field :event_id, :value => @event.id %>
-      </div>
-      <div class="actions">
-        <%= f.submit student.name, class:"btn btn-primary attendance-btn #{student.id}"%>
-      </div>
-    <% end %>
-  <% end %>
-
-  <% end %>
-  </div>
+    <div id="juniors">
+      <%= render "juniors"%>
+    </div>
 
   
   </div>
@@ -161,27 +122,9 @@
 
   <h1 class="text-center"> Sophomores </h1>
   
-  <div id="sophomores">
-
-  <% @Sophomores.each do |student| %>
-  
-  <% if @students.where(id: student.id).blank? %>
-  
-      <%= form_for(@attendance, remote: true) do |f| %>
-
-      <div class="field">
-        <%= f.hidden_field :student_id, :value => student.id%>
-      </div>
-      <div class="field">
-        <%= f.hidden_field :event_id, :value => @event.id %>
-      </div>
-      <div class="actions">
-        <%= f.submit student.name, class:"btn btn-primary #{student.id}"%>
-      </div>
-    <% end %>
-  <% end %>
-  <% end %>
-  </div>
+    <div id="sophomores">
+      <%= render "sophomores"%>
+    </div>
   
   </div>
   </div>
@@ -220,29 +163,9 @@
   
   <h1 class="text-center"> Freshmen </h1>
   
-  <div id="freshmen">
-  
-    <% @Freshmen.each do |student| %>
-    
-    <% if @students.where(id: student.id).blank? %>
-  
-      <%= form_for(@attendance, remote: true) do |f| %>
-
-      <div class="field">
-        <%= f.hidden_field :student_id, :value => student.id%>
-      </div>
-      <div class="field">
-        <%= f.hidden_field :event_id, :value => @event.id %>
-      </div>
-      <div class="actions">
-        <%= f.submit student.name, class:"btn btn-primary #{student.id}"%>
-      </div>
-    <% end %>
-    
-    <% end %>
-
-  <% end %>
-  </div>
+    <div id="freshmen">
+      <%= render "freshmen"%>
+    </div>
   
   </div>
   </div>
@@ -280,29 +203,9 @@
   
   <h1 class="text-center"> Others </h1>
   
-  <div id = "others">
-  
-    <% @Others.each do |student| %>
-    
-    <% if @students.where(id: student.id).blank? %>
-  
-      <%= form_for(@attendance, remote: true) do |f| %>
-
-      <div class="field">
-        <%= f.hidden_field :student_id, :value => student.id%>
-      </div>
-      <div class="field">
-        <%= f.hidden_field :event_id, :value => @event.id %>
-      </div>
-      <div class="actions">
-        <%= f.submit student.name, class:"btn btn-primary #{student.id}"%>
-      </div>
-      <% end %>
-      
-    <% end %>
-
-    <% end %>
-  </div>
+    <div id = "others">
+      <%= render "others"%>
+    </div>
     
   </div>
   </div>
