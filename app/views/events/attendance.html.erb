@@ -1,12 +1,14 @@
 
 <div class="container">
 
+<div id = "header">
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
   
   <div class="panel panel-default">
   <div class="list-group-item">
   
+
   <h1 class="text-center"> <%= "#{@event.name} Attendance"%> </h1>
   
   <h2 class = "text-right"> Total: <%= @students.count %> </h2>
@@ -19,11 +21,13 @@
   
   <%= link_to 'Refresh Present', refresh_div_path, remote: true, class: "btn btn-success" %>
   
-  <%= link_to 'New Student', new_student_path, class: "btn btn-danger" %>
+  <%= link_to 'New Student', new_student_path(event_id: @event.id), remote: true, class: "btn btn-danger" %>
+  
   
   </div>
   </div>
   </div>
+</div>
 </div>
 </div>
 
@@ -52,7 +56,7 @@
   
     
       <div id="refresh_seniors">
-       <h3> Seniors Present: <%= @Seniors_present.count%> </h3>
+        <%= render "seniors_present" %>
       </div>
   </div>
   </div>
@@ -96,7 +100,7 @@
   
     
     <div id="refresh_juniors">
-      <h3> Juniors Present: <%= @Juniors_present.count%> </h3>
+      <%= render "juniors_present" %>
     </div>
   
   </div>
@@ -136,7 +140,7 @@
   
     
     <div id="refresh_sophomores">
-      <h3> Sophs Present: <%= @Sophomores_present.count%> </h3>
+      <%= render "sophomores_present" %>
     </div>
   
   </div>
@@ -178,7 +182,7 @@
   
     
     <div id="refresh_freshmen">
-      <h3> Freshmen Present: <%= @Freshmen_present.count%> </h3>
+      <%= render "freshmen_present" %>
     </div>
   
   </div>
@@ -217,7 +221,7 @@
   
     
     <div id="refresh_others">
-      <h3> Others Present: <%= @Others_present.count%> </h3>
+      <%= render "others_present" %>
     </div>
   
   </div>

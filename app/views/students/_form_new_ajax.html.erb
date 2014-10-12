@@ -1,0 +1,76 @@
+<div id="new_student">
+
+<div class="row">
+  <div class="col-md-5 col-md-offset-2">
+  
+  <div class="panel panel-default">
+  <div class="list-group-item">
+  
+  <h2 class="text-center"> Add New Student </h2>
+  
+<%= form_for(@student, remote: true, :url => students_path(event_id: @event.id),:method => :post) do |f| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% @student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_area :name %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :graduation_year %><br>
+    <%= f.select :graduation_year, Student::GRADUATION_YEAR,{} , :class => "form-control" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_area :email %>
+  </div>
+  <div class="field">
+    <%= f.label :contact %><br>
+    <%= f.check_box :contact %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-warning" %>
+  </div>
+<% end %>
+
+  </div>
+  </div>
+  </div>
+  
+  
+  
+  
+  <div class="col-md-3 col-md-offset-0">
+  
+  <div class="panel panel-default">
+  <div class="panel-body">
+  
+  <h3> Tip for Graduation Year </h3>
+  
+  <p> Senior: <%= @senior %> </p>
+  <p> Junior: <%= @junior %> </p>
+  <p> Sophomore: <%= @sophomore %> </p>
+  <p> Freshman: <%= @freshman %> </p>
+  <p> **If none of the above, select 0000 and change this in the edit page </p>
+  
+  </div>
+  </div>
+  </div>
+  
+  
+  
+</div>
+
+
+</div>
