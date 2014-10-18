@@ -59,6 +59,13 @@
   $dropdown-link-hover-bg: $translucent-blackest;
   
   $table-bg-hover: $translucent-blacker;
+  
+  $navbar-default-link-hover-color: white;
+  
+  #affix-nav {
+    background-color: rgba(0,0,0,0.7) !important;
+}
+
 
 
 
@@ -66,3 +73,4 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
