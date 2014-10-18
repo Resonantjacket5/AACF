@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
  
-  
+  post 'attendance/create_attendance', to: 'attendances#create_attendance', as: 'create_attendance'  
 
   delete 'attendance/destroy_attendance', to: 'attendances#destroy_attendance', as: 'destroy_attendance'
 

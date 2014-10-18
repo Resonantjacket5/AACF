@@ -31,11 +31,12 @@
         <ul class="nav navbar-nav">
           <li class = "navbar-brand"> <%= current_user.email %> </li>
           <li><%=link_to 'Dashboard', dashboards_index_path%></li>
+          <li><%=link_to 'Attendance', attendance_dashboard_path %> </li>
           <li> <%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
         </ul>
       
     <% else %>
-      <%=link_to 'AACF', new_user_session_path, class: "navbar-brand"%>
+      <%=link_to 'Login', new_user_session_path, class: "navbar-brand"%>
     <% end %>    
     
       <ul class="nav navbar-nav navbar-right" id="mainNavBar">

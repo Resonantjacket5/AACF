@@ -1,6 +1,6 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: [:show, :edit, :update, :destroy]
-  before_action :set_students_graduation_year, only: [:create, :destroy_attendance]
+  before_action :set_students_graduation_year, only: [:create, :destroy_attendance, :create_attendance]
   
   
 
@@ -73,6 +73,44 @@ class AttendancesController < ApplicationController
         format.json { render json: @attendance.errors, status: :unprocessable_entity }
       end
     end
+  end
+  
+  def create_attendance
+  	@attendance = Attendance.new
+  	@attendance.student_id = params[:student_id]
+  	@attendance.event_id = params[:event_id]
+  	@attendance.save
+  
+    @event = Event.where(id: @attendance.event_id).first
+
+    case @attendance.student.graduation_year
+      when @senior
+        @Seniors_present = @event.students.where(graduation_year: @senior)
+        respond_to do |format|
+          format.js { render 'senior_present.js.erb' }
+        end
+      when @junior
+        @Juniors_present = @event.students.where(graduation_year: @junior)
+        respond_to do |format|
+          format.js { render 'junior_present.js.erb' }
+        end
+      when @sophomore
+        @Sophomores_present = @event.students.where(graduation_year: @sophomore)
+        respond_to do |format|
+          format.js { render 'sophomore_present.js.erb' }
+        end
+      when @freshman
+        @Freshmen_present = @event.students.where(graduation_year: @freshman)
+        respond_to do |format|
+          format.js { render 'freshman_present.js.erb' }
+        end
+      else
+        @Others_present = @event.students.where("graduation_year < #{@senior} OR graduation_year > #{@freshman}")
+        respond_to do |format|
+          format.js { render 'other_present.js.erb' }
+        end
+    end
+  	
   end
   
   def destroy_attendance

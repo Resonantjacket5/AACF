@@ -3,7 +3,7 @@
 <div class="container">
 
 <div class="row">
-  <div class="col-md-3 col-md-offset-2">
+  <div class="col-md-3 col-md-offset-0">
   
   <div class="panel panel-default">
   <div class="panel-body">
@@ -39,16 +39,35 @@
   
   
   
-  <div class="col-md-5 col-md-offset-0">
+  <div class="col-md-9 col-md-offset-0">
   
   <div class="panel panel-default">
   <div class="panel-body">
   
     <h3> Events Attended: </h3>
-      
-    <% @events.each do |event| %>
-      <%= event.name %> <br/>
-    <% end %>
+    
+    <table class = "table table-hover">
+      <thead>
+    	<th> Name </th>
+    	<th> Location </th>
+    	<th> Type </th>
+    	<th> Date </th>
+      </thead>
+    	
+      <tbody>
+        <% @events.each do |event| %>
+    	<tr>	
+    	  <td> <%= event.name %> </td>
+    	  <td> <%=event.location %></td>
+    	  <td> <%=event.event_type %></td>
+    	  <td> <%= event.event_date.strftime("%b %e, %Y at %l:%M %P") %> </td>
+    	  <td> <%= link_to 'show', event_path(event), class: "btn btn-primary btn-xs"%> </td>
+    	</tr>
+    	<% end %>
+      </tbody>
+    </table>
+    		
+    
   
   </div>
   </div>

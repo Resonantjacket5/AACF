@@ -2,18 +2,7 @@
     
     <% if @students.where(id: student.id).blank? %>
   
-      <%= form_for(@attendance, remote: true) do |f| %>
-
-      <div class="field">
-        <%= f.hidden_field :student_id, :value => student.id%>
-      </div>
-      <div class="field">
-        <%= f.hidden_field :event_id, :value => @event.id %>
-      </div>
-      <div class="actions">
-        <%= f.submit student.name, class:"btn btn-primary #{student.id}"%>
-      </div>
-    <% end %>
+      <%= link_to student.name, create_attendance_path(event_id: @event.id, student_id: student.id), method: :post, remote: true, class: "btn btn-primary #{student.id}" %>
     
     <% end %>
 
