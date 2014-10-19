@@ -4,6 +4,6 @@ class Event < ActiveRecord::Base
   
   has_many :students, :through => :attendances
   
-  EVENT_TYPE = ["LG", "SG", "Prayer", "Activity"]
+  EVENT_TYPE = ["LG", "SG", "Prayer", "Activity", "Conference"]
 
 end
