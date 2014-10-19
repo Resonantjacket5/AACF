@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.all.eventdesc
   end
 
   # GET /events/1
@@ -46,11 +46,11 @@ class EventsController < ApplicationController
     
     
     
-    @Seniors = Student.where(graduation_year: @senior)
-    @Juniors = Student.where(graduation_year: @junior)
-    @Sophomores = Student.where(graduation_year: @sophomore)
-    @Freshmen = Student.where(graduation_year: @freshman)
-    @Others = Student.where("graduation_year < #{@senior} OR graduation_year > #{@freshman}")
+    @Seniors = Student.where(graduation_year: @senior).alphabetical
+    @Juniors = Student.where(graduation_year: @junior).alphabetical
+    @Sophomores = Student.where(graduation_year: @sophomore).alphabetical
+    @Freshmen = Student.where(graduation_year: @freshman).alphabetical
+    @Others = Student.where("graduation_year < #{@senior} OR graduation_year > #{@freshman}").alphabetical
     
   end
   
@@ -130,11 +130,11 @@ class EventsController < ApplicationController
     end
     
     def people_present
-      @Seniors_present = @event.students.where(graduation_year: @senior)
-      @Juniors_present = @event.students.where(graduation_year: @junior)
-      @Sophomores_present = @event.students.where(graduation_year: @sophomore)
-      @Freshmen_present = @event.students.where(graduation_year: @freshman)
-      @Others_present = @event.students.where("graduation_year < #{@senior} OR graduation_year > #{@freshman}")
+      @Seniors_present = @event.students.where(graduation_year: @senior).alphabetical
+      @Juniors_present = @event.students.where(graduation_year: @junior).alphabetical
+      @Sophomores_present = @event.students.where(graduation_year: @sophomore).alphabetical
+      @Freshmen_present = @event.students.where(graduation_year: @freshman).alphabetical
+      @Others_present = @event.students.where("graduation_year < #{@senior} OR graduation_year > #{@freshman}").alphabetical
     end
     
     

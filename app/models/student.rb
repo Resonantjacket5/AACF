@@ -4,6 +4,12 @@ class Student < ActiveRecord::Base
   
   has_many :events, :through => :attendances
   
+  scope :alphabetical, -> {order(name: :asc)}
+  
+  scope :gradalpha, -> {order(graduation_year: :desc, name: :asc)}
+  
+  validates :name, :uniqueness => { :scope => :graduation_year }
+  
       if Time.now.month >= 7
         senior = Time.now.year + 1
         junior = Time.now.year + 2

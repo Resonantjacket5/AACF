@@ -54,13 +54,14 @@
   
   a.btn:visited { color: darken(white,2%); }
   
-  $dropdown-bg: $translucent-blacker;
+  $dropdown-bg: rgba(0,0,0,0.6);
   
-  $dropdown-link-hover-bg: $translucent-blackest;
+  $dropdown-link-hover-bg: rgba(0,0,0,0.7);
   
   $table-bg-hover: $translucent-blacker;
   
   $navbar-default-link-hover-color: white;
+
   
   #affix-nav {
     background-color: rgba(0,0,0,0.7) !important;
